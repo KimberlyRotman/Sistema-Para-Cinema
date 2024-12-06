@@ -1,11 +1,52 @@
-public class Sessao{
-    Double valorIngresso;
-    Lista  clientes; // TODO: instanciar corretametne pois uma sessao pode ter mais de um cliente
-    objeto filme;
-    objeto sala;  //TODO: instanciar corretamente os objetos
-    objeto ingresso;
-    Time horario; //TODO: verificar se o Time existe e esta correto
+import java.sql.Time;
+import java.util.List;
 
-    //TODO: fazer os getters e setters dos atributos
-    //TODO: fazer os construtores dos atributos
+public class Sessao{
+
+
+    Filme filme;
+    Sala sala;  
+    Time horario; 
+    List<Cliente> clientes;
+
+    public Sessao(List<Cliente> clientes, Filme filme, Time horario, Sala sala) {
+        this.clientes = clientes;
+        this.filme = filme;
+        this.horario = horario;
+        this.sala = sala;
+    }
+
+    public Filme getFilme() {
+        return filme;
+    }
+
+    public void setFilme(Filme filme) {
+        this.filme = filme;
+    }
+
+    public Sala getSala() {
+        return sala;
+    }
+
+    public void setSala(Sala sala) {
+        this.sala = sala;
+    }
+
+    public Time getHorario() {
+        return horario;
+    }
+
+    public void setHorario(Time horario) {
+        this.horario = horario;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
+    }
+
+
 }
