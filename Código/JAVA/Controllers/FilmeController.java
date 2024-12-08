@@ -1,10 +1,13 @@
+package Controllers;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilmeCadastro {
+import Models.Filme;
+
+public class FilmeController {
     private List<Filme> filmesCadastrados;
 
-    public FilmeCadastro() {
+    public FilmeController() {
         this.filmesCadastrados = new ArrayList<>();
     }
 

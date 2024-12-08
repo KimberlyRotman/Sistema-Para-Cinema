@@ -1,3 +1,5 @@
+package View;
+
 public class SistemaCinema{
 
     //TODO: instanciar tudo
