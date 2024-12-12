@@ -6,8 +6,6 @@ public class SistemaCinema{
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
 
-        ClienteView.main(args);
-
         /* 
         text: vamos criar um cinema
         text: quantas salas?
