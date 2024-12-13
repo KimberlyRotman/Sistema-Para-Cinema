@@ -9,7 +9,7 @@ public class Filme{
     String dataLancamento;
     String sinopse;
     Time duracao;
-    String formato;
+    String formato; //3d ou 2dd
     String diretor;
     List<String> atores;
 

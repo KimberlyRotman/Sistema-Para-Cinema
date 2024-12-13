@@ -10,13 +10,13 @@ public class FilmeController {
         this.filmes = new ArrayList<>();
     }
 
-    // Método para cadastrar um filme
+    
     public void cadastrarFilme(Filme filme) {
         filmes.add(filme);
         System.out.println("Filme cadastrado com sucesso!");
     }
 
-    // Método para buscar um filme por código
+    
     public Filme buscarFilme(int codFilme) {
         for (Filme filme : filmes) {
             if (filme.getCodFilme() == codFilme) {
@@ -27,7 +27,7 @@ public class FilmeController {
         return null;
     }
 
-    // Método para editar um filme existente
+    
     public void editarFilme(int codFilme, Filme novoFilme) {
         for (int i = 0; i < filmes.size(); i++) {
             if (filmes.get(i).getCodFilme() == codFilme) {
@@ -39,7 +39,7 @@ public class FilmeController {
         System.out.println("Filme não encontrado!");
     }
 
-    // Método para deletar um filme
+   
     public void deletarFilme(int codFilme) {
         for (int i = 0; i < filmes.size(); i++) {
             if (filmes.get(i).getCodFilme() == codFilme) {
@@ -51,7 +51,7 @@ public class FilmeController {
         System.out.println("Filme não encontrado!");
     }
 
-    // Método para listar todos os filmes
+
     public List<Filme> listarFilmes() {
         return filmes;
     }
