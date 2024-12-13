@@ -1,41 +1,58 @@
 package Controllers;
+import Models.Filme;
 import java.util.ArrayList;
 import java.util.List;
 
-import Models.Filme;
-
 public class FilmeController {
-    private List<Filme> filmesCadastrados;
+    private List<Filme> filmes;
 
     public FilmeController() {
-        this.filmesCadastrados = new ArrayList<>();
+        this.filmes = new ArrayList<>();
     }
 
-    //adiciona essoa
-    public void adicionarFilme(Filme filme) {
-        filmesCadastrados.add(filme);
-        System.out.println("Filme adicionado: " + filme.getNome());
+    // Método para cadastrar um filme
+    public void cadastrarFilme(Filme filme) {
+        filmes.add(filme);
+        System.out.println("Filme cadastrado com sucesso!");
     }
 
-    //lista pessoas cadastradas
-    public void listarFilmes() {
-        if (filmesCadastrados.isEmpty()) {
-            System.out.println("Nenhuma filme cadastrado.");
-            return;
-        }
-        System.out.println("Lista de filmes cadastrados:");
-        for (Filme filme : filmesCadastrados) {
-            System.out.println(filme);
-        }
-    }
-
-    //busca pessoa pelo nome
-    public Filme buscarFilmePorNome(String nome) {
-        for (Filme filme : filmesCadastrados) {
-            if (filme.getNome().equalsIgnoreCase(nome)) {
+    // Método para buscar um filme por código
+    public Filme buscarFilme(int codFilme) {
+        for (Filme filme : filmes) {
+            if (filme.getCodFilme() == codFilme) {
                 return filme;
             }
         }
+        System.out.println("Filme não encontrado!");
         return null;
+    }
+
+    // Método para editar um filme existente
+    public void editarFilme(int codFilme, Filme novoFilme) {
+        for (int i = 0; i < filmes.size(); i++) {
+            if (filmes.get(i).getCodFilme() == codFilme) {
+                filmes.set(i, novoFilme);
+                System.out.println("Filme editado com sucesso!");
+                return;
+            }
+        }
+        System.out.println("Filme não encontrado!");
+    }
+
+    // Método para deletar um filme
+    public void deletarFilme(int codFilme) {
+        for (int i = 0; i < filmes.size(); i++) {
+            if (filmes.get(i).getCodFilme() == codFilme) {
+                filmes.remove(i);
+                System.out.println("Filme deletado com sucesso!");
+                return;
+            }
+        }
+        System.out.println("Filme não encontrado!");
+    }
+
+    // Método para listar todos os filmes
+    public List<Filme> listarFilmes() {
+        return filmes;
     }
 }

@@ -1,5 +1,4 @@
 package Models;
-import java.sql.Date;
 import java.sql.Time;
 import java.util.List;
 
@@ -7,14 +6,14 @@ public class Filme{
     int codFilme;
     String nome;
     String genero;
-    Date dataLancamento;
+    String dataLancamento;
     String sinopse;
     Time duracao;
     String formato;
     String diretor;
     List<String> atores;
 
-    public Filme(List<String> atores, int codFilme, Date dataLancamento, String diretor, Time duracao, String formato, String genero, String nome, String sinopse) {
+    public Filme(List<String> atores, int codFilme, String dataLancamento, String diretor, Time duracao, String formato, String genero, String nome, String sinopse) {
         this.atores = atores;
         this.codFilme = codFilme;
         this.dataLancamento = dataLancamento;
@@ -45,10 +44,10 @@ public class Filme{
     public void setGenero(String genero) {
         this.genero = genero;
     }
-    public Date getDataLancamento() {
+    public String getDataLancamento() {
         return dataLancamento;
     }
-    public void setDataLancamento(Date dataLancamento) {
+    public void setDataLancamento(String dataLancamento) {
         this.dataLancamento = dataLancamento;
     }
     public String getSinopse() {
