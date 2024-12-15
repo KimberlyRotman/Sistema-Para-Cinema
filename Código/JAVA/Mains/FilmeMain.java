@@ -55,11 +55,9 @@ public class FilmeMain {
                     }
                     break;
                 case 6:
-                    Main.main(null);
-                    break;
+                    return;
                 default:
                     System.out.println("Opção inválida!");
-                    FilmeMain.main(null);
             }
         }
     }

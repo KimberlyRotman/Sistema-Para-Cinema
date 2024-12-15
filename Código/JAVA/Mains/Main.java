@@ -34,12 +34,12 @@ public class Main {
                     FilmeMain.main(null);
                     break;
                 case 6:
-                    System.out.println("Encerrando o sistema...");
+                    System.out.println("\n--Sistema Encerrado--");
                     scanner.close();
                     return;
                 default:
                     System.out.println("Opção inválida!");
-                    Main.main(null);
+                    
             }
             
         }
