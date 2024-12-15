@@ -2,7 +2,6 @@ package Mains;
 import Controllers.FilmeController;
 import Models.Filme;
 import View.FilmeView;
-
 import java.util.Scanner;
 
 public class FilmeMain {
@@ -18,8 +17,8 @@ public class FilmeMain {
             System.out.println("3. Editar Filme");
             System.out.println("4. Deletar Filme");
             System.out.println("5. Listar Filmes");
-            System.out.println("6. Sair");
-            System.out.print("Escolha uma opção: ");
+            System.out.println("6. Voltar para Menu Principal");
+            System.out.println("Escolha uma opção: ");
             int opcao = scanner.nextInt();
             scanner.nextLine();
 
@@ -56,11 +55,11 @@ public class FilmeMain {
                     }
                     break;
                 case 6:
-                    System.out.println("Encerrando o sistema...");
-                    scanner.close();
-                    return;
+                    Main.main(null);
+                    break;
                 default:
                     System.out.println("Opção inválida!");
+                    FilmeMain.main(null);
             }
         }
     }
