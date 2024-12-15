@@ -34,9 +34,9 @@ public class FilmeView {
         String duracaoString = scanner.nextLine();
         Time duracao = Time.valueOf(duracaoString);
 
-        System.out.print("Código do Filme: ");
-        int codFilme = scanner.nextInt();
-        scanner.nextLine(); // Consumir quebra de linha
+        int cod = 1;
+        int codFilme = cod;
+        cod++;
 
         System.out.print("Data de Lançamento (ddmmaaaa): ");
         String dataLancamento = scanner.nextLine();
@@ -59,6 +59,7 @@ public class FilmeView {
         if (filme == null) {
             System.out.println("Nenhum filme encontrado.");
         } else {
+            System.out.println("Código: " + filme.getCodFilme());
             System.out.println("=== Detalhes do Filme ===");
             System.out.println("Nome: " + filme.getNome());
             System.out.println("Diretor: " + filme.getDiretor());
@@ -66,7 +67,6 @@ public class FilmeView {
             System.out.println("Gênero: " + filme.getGenero());
             System.out.println("Formato: " + filme.getFormato());
             System.out.println("Duração: " + filme.getDuracao());
-            System.out.println("Código: " + filme.getCodFilme());
             System.out.println("Data de Lançamento: " + filme.getDataLancamento());
             System.out.println("Atores: " + String.join(", ", filme.getAtores()));
         }

@@ -17,7 +17,7 @@ public class FilmeMain {
             System.out.println("3. Editar Filme");
             System.out.println("4. Deletar Filme");
             System.out.println("5. Listar Filmes");
-            System.out.println("6. Voltar para Menu Principal");
+            System.out.println("7. Voltar para Menu Principal");
             System.out.println("Escolha uma opção: ");
             int opcao = scanner.nextInt();
             scanner.nextLine();
@@ -25,13 +25,13 @@ public class FilmeMain {
             switch (opcao) {
                 case 1:
                     Filme novoFilme = view.obterDadosFilme();
-                    controller.cadastrarFilme(novoFilme);
+                    controller.cadastrar(novoFilme);
                     break;
                 case 2:
                     System.out.print("Digite o código do filme: ");
                     int codBuscar = scanner.nextInt();
                     scanner.nextLine(); 
-                    Filme filmeBuscado = controller.buscarFilme(codBuscar);
+                    Filme filmeBuscado = controller.buscar(codBuscar);
                     view.exibirFilme(filmeBuscado);
                     break;
                 case 3:
@@ -40,19 +40,16 @@ public class FilmeMain {
                     scanner.nextLine(); 
                     System.out.println("Digite os novos dados do filme:");
                     Filme filmeEditado = view.obterDadosFilme();
-                    controller.editarFilme(codEditar, filmeEditado);
+                    controller.editar(codEditar, filmeEditado);
                     break;
                 case 4:
                     System.out.print("Digite o código do filme a ser deletado: ");
                     int codDeletar = scanner.nextInt();
                     scanner.nextLine();
-                    controller.deletarFilme(codDeletar);
+                    controller.remover(codDeletar);
                     break;
                 case 5:
-                    System.out.println("=== Lista de Filmes ===");
-                    for (Filme filme : controller.listarFilmes()) {
-                        view.exibirFilme(filme);
-                    }
+                    controller.exibirNomesEIds();
                     break;
                 case 6:
                     return;
