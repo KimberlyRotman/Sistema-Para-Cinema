@@ -1,6 +1,6 @@
 package Mains;
 import Controllers.FilmeController;
-import Models.Filme;
+import Models.FilmeModel;
 import View.FilmeView;
 import java.util.Scanner;
 
@@ -24,14 +24,14 @@ public class FilmeMain {
 
             switch (opcao) {
                 case 1:
-                    Filme novoFilme = view.obterDadosFilme();
+                    FilmeModel novoFilme = view.obterDadosFilmeModel();
                     controller.cadastrar(novoFilme);
                     break;
                 case 2:
                     System.out.print("Digite o código do filme: ");
                     int codBuscar = scanner.nextInt();
                     scanner.nextLine(); 
-                    Filme filmeBuscado = controller.buscar(codBuscar);
+                    FilmeModel filmeBuscado = controller.buscar(codBuscar);
                     view.exibirFilme(filmeBuscado);
                     break;
                 case 3:
@@ -39,7 +39,7 @@ public class FilmeMain {
                     int codEditar = scanner.nextInt();
                     scanner.nextLine(); 
                     System.out.println("Digite os novos dados do filme:");
-                    Filme filmeEditado = view.obterDadosFilme();
+                    FilmeModel filmeEditado = view.obterDadosFilmeModel();
                     controller.editar(codEditar, filmeEditado);
                     break;
                 case 4:

@@ -1,10 +1,10 @@
 package Controllers;
-import Models.Filme;
+import Models.FilmeModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilmeController implements CrudController<Filme> {
-    private List<Filme> filmes;
+public class FilmeController implements InterfaceController<FilmeModel> {
+    private List<FilmeModel> filmes;
 
     public FilmeController() {
         this.filmes = new ArrayList<>();
@@ -12,15 +12,15 @@ public class FilmeController implements CrudController<Filme> {
 
     // Implementação do método de cadastrar
     @Override
-    public void cadastrar(Filme filme) {
+    public void cadastrar(FilmeModel filme) {
         filmes.add(filme);
         System.out.println("Filme cadastrado com sucesso!");
     }
 
     // Implementação do método de buscar
     @Override
-    public Filme buscar(int codFilme) {
-        for (Filme filme : filmes) {
+    public FilmeModel buscar(int codFilme) {
+        for (FilmeModel filme : filmes) {
             if (filme.getCodFilme() == codFilme) {
                 return filme;
             }
@@ -31,7 +31,7 @@ public class FilmeController implements CrudController<Filme> {
 
     // Implementação do método de editar
     @Override
-    public void editar(int codFilme, Filme novoFilme) {
+    public void editar(int codFilme, FilmeModel novoFilme) {
         for (int i = 0; i < filmes.size(); i++) {
             if (filmes.get(i).getCodFilme() == codFilme) {
                 filmes.set(i, novoFilme);
@@ -57,7 +57,7 @@ public class FilmeController implements CrudController<Filme> {
 
     // Implementação do método de listar todos
     @Override
-    public List<Filme> listarTodos() {
+    public List<FilmeModel> listarTodos() {
         return filmes;
     }
 
@@ -67,7 +67,7 @@ public class FilmeController implements CrudController<Filme> {
             return;
         }
         System.out.println("\n=== Lista de Filmes (Nome e ID) ===");
-        for (Filme filme : filmes) {
+        for (FilmeModel filme : filmes) {
             System.out.println("ID: " + filme.getCodFilme() + " | Nome: " + filme.getNome());
         }
     }

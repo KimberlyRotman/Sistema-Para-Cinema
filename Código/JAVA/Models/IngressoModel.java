@@ -2,7 +2,7 @@ package Models;
 import java.sql.Date;
 import java.sql.Time;
 
-public class Ingresso{
+public class IngressoModel{
     //id
     int nroIngresso;
     String nomeFilme;
@@ -13,11 +13,10 @@ public class Ingresso{
     Double valorPago;
     String formato;
     String localizacaoSala; //objeto com nome da sala e numero do assento
-    Sessao sessao;
+    SessaoModel sessao;
 
     
-    public Ingresso(int nroIngresso, String nomeFilme, String tipo, Date dataFilme, Time horario, Double valorIngresso,
-            Double valorPago, String formato, String localizacaoSala, Sessao sessao) {
+    public IngressoModel(int nroIngresso, String nomeFilme, String tipo, Date dataFilme, Time horario, Double valorIngresso, Double valorPago, String formato, String localizacaoSala, SessaoModel sessao) {
         this.nroIngresso = nroIngresso;
         this.nomeFilme = nomeFilme;
         this.tipo = tipo;
@@ -84,10 +83,10 @@ public class Ingresso{
     public void setLocalizacaoSala(String localizacaoSala) {
         this.localizacaoSala = localizacaoSala;
     }
-    public Sessao getSessao() {
+    public SessaoModel getSessao() {
         return sessao;
     }
-    public void setSessao(Sessao sessao) {
+    public void setSessaoModel(SessaoModel sessao) {
         this.sessao = sessao;
     }
 

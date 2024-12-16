@@ -1,19 +1,25 @@
 package View;
-import Models.Filme;
+import Models.FilmeModel;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class FilmeView {
+public class FilmeView implements InterfaceView<FilmeModel> {
     private Scanner scanner;
 
     public FilmeView() {
         this.scanner = new Scanner(System.in);
     }
 
-    // Método para obter os dados de um filme
-    public Filme obterDadosFilme() {
+    // Implementação do método obterDados da interface BaseView
+    @Override
+    public FilmeModel obterDados() {
+        return obterDadosFilmeModel();
+    }
+
+    // Método específico de Filme para obter os dados
+    public FilmeModel obterDadosFilmeModel() {
         System.out.println("=== Cadastrar Filme ===");
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
@@ -30,9 +36,16 @@ public class FilmeView {
         System.out.print("Formato: ");
         String formato = scanner.nextLine();
 
-        System.out.print("Duração (hh:mm:ss): ");
-        String duracaoString = scanner.nextLine();
-        Time duracao = Time.valueOf(duracaoString);
+        Time duracao = null;
+        while (duracao == null) {
+            System.out.print("Duração (hh:mm:ss): ");
+            String duracaoString = scanner.nextLine();
+            try {
+                duracao = Time.valueOf(duracaoString);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Formato inválido! Insira a duração no formato hh:mm:ss.");
+            }
+        }
 
         int cod = 1;
         int codFilme = cod;
@@ -40,22 +53,38 @@ public class FilmeView {
 
         System.out.print("Data de Lançamento (ddmmaaaa): ");
         String dataLancamento = scanner.nextLine();
-        
 
-        System.out.print("Quantos atores o filme possui? ");
-        int numAtores = scanner.nextInt();
-        scanner.nextLine(); // Consumir quebra de linha
+        int numAtores = -1;
+        while (numAtores < 0) {
+            System.out.print("Quantos atores o filme possui? ");
+            try {
+                numAtores = scanner.nextInt();
+                scanner.nextLine();
+                if (numAtores < 0) {
+                    System.out.println("O número de atores não pode ser negativo.");
+                }
+            } catch (Exception e) {
+                System.out.println("Por favor, insira um número válido.");
+                scanner.nextLine();
+            }
+        }
         List<String> atores = new ArrayList<>();
         for (int i = 0; i < numAtores; i++) {
             System.out.print("Ator " + (i + 1) + ": ");
             atores.add(scanner.nextLine());
         }
 
-        return new Filme(atores, codFilme, dataLancamento, diretor, duracao, formato, genero, nome, sinopse);
+        return new FilmeModel(atores, codFilme, dataLancamento, diretor, duracao, formato, genero, nome, sinopse);
     }
 
-    // Método para mostrar os detalhes de um filme
-    public void exibirFilme(Filme filme) {
+    // Implementação do método exibir da interface BaseView
+    @Override
+    public void exibir(FilmeModel filme) {
+        exibirFilme(filme);
+    }
+
+    // Método específico de Filme para exibir os detalhes
+    public void exibirFilme(FilmeModel filme) {
         if (filme == null) {
             System.out.println("Nenhum filme encontrado.");
         } else {
@@ -70,10 +99,5 @@ public class FilmeView {
             System.out.println("Data de Lançamento: " + filme.getDataLancamento());
             System.out.println("Atores: " + String.join(", ", filme.getAtores()));
         }
-    }
-
-    // Método para exibir mensagens
-    public void exibirMensagem(String mensagem) {
-        System.out.println(mensagem);
     }
 }

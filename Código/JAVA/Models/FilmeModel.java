@@ -2,7 +2,7 @@ package Models;
 import java.sql.Time;
 import java.util.List;
 
-public class Filme{
+public class FilmeModel{
     int codFilme;
     String nome;
     String genero;
@@ -13,7 +13,7 @@ public class Filme{
     String diretor;
     List<String> atores;
 
-    public Filme(List<String> atores, int codFilme, String dataLancamento, String diretor, Time duracao, String formato, String genero, String nome, String sinopse) {
+    public FilmeModel(List<String> atores, int codFilme, String dataLancamento, String diretor, Time duracao, String formato, String genero, String nome, String sinopse) {
         this.atores = atores;
         this.codFilme = codFilme;
         this.dataLancamento = dataLancamento;

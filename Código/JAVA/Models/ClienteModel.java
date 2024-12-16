@@ -1,7 +1,7 @@
 package Models;
 import java.util.List;
 
-public class Cliente{
+public class ClienteModel{
     
     int cpf; //id
     String nome;
@@ -9,9 +9,9 @@ public class Cliente{
     String email;
     String tipo; //se é cadeirante por exemplo ou sucetível a desconto
     List<Integer> contatoTel;
-    List<Ingresso> ingressosComprados;
+    List<IngressoModel> ingressosComprados;
 
-    public Cliente(List<Integer> contatoTel, int cpf, String email, int idade, List<Ingresso> ingressosComprados, String nome, String tipo) {
+    public ClienteModel(List<Integer> contatoTel, int cpf, String email, int idade, List<IngressoModel> ingressosComprados, String nome, String tipo) {
         this.contatoTel = contatoTel;
         this.cpf = cpf;
         this.email = email;
@@ -20,6 +20,8 @@ public class Cliente{
         this.nome = nome;
         this.tipo = tipo;
     }
+
+
 
     public int getCpf() {
         return cpf;
@@ -57,10 +59,10 @@ public class Cliente{
     public void setContatoTel(List<Integer> contatoTel) {
         this.contatoTel = contatoTel;
     }
-    public List<Ingresso> getIngressosComprados() {
+    public List<IngressoModel> getIngressosComprados() {
         return ingressosComprados;
     }
-    public void setIngressosComprados(List<Ingresso> ingressosComprados) {
+    public void setIngressosComprados(List<IngressoModel> ingressosComprados) {
         this.ingressosComprados = ingressosComprados;
     }
 
