@@ -31,7 +31,7 @@ public class Main {
                     FilmeMain.main(null);
                     break;
                 case 5:
-                    FilmeMain.main(null);
+                    SalaMain.main(null);
                     break;
                 case 6:
                     System.out.println("\n--Sistema Encerrado--");

@@ -74,7 +74,7 @@ public class ClienteView implements InterfaceView<ClienteModel>{
                 scanner.nextLine();
             }
         }
-        List<Ingresso> ingressosComprados = new ArrayList<>();
+        List<IngressoModel> ingressosComprados = new ArrayList<>();
         for (int i = 0; i < numIngressos; i++) {
             //fazer busca de ingresso
             System.out.print("Ingresso " + (i + 1) + ": ");

@@ -4,89 +4,60 @@ import java.util.List;
 public class SalaModel{
 
     int codSala;
-    String nome;
     int capacidadeGeral;
     int capacidadeAtual;
-    int qtdGeral;
     int qtdEspecial;
-    FilmeModel filme;
+    String tipo; //sala premium ou não
     List<String> assentos;
 
-    public SalaModel(List<String> assentos, int capacidadeAtual, int capacidadeGeral, int codSala, FilmeModel filme, String nome, int qtdEspecial, int qtdGeral) {
-        this.assentos = assentos;
-        this.capacidadeAtual = capacidadeAtual;
-        this.capacidadeGeral = capacidadeGeral;
+    
+    public SalaModel(int codSala, int capacidadeGeral, int capacidadeAtual, int qtdEspecial, String tipo, List<String> assentos) {
         this.codSala = codSala;
-        this.filme = filme;
-        this.nome = nome;
+        this.capacidadeGeral = capacidadeGeral;
+        this.capacidadeAtual = capacidadeAtual;
         this.qtdEspecial = qtdEspecial;
-        this.qtdGeral = qtdGeral;
+        this.tipo = tipo;
+        this.assentos = assentos;
+        //como q ele vai verificar se os assentos especiais estão sendo usados?
     }
+
 
     public int getCodSala() {
         return codSala;
     }
-
     public void setCodSala(int codSala) {
         this.codSala = codSala;
     }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public int getCapacidadeGeral() {
         return capacidadeGeral;
     }
-
     public void setCapacidadeGeral(int capacidadeGeral) {
         this.capacidadeGeral = capacidadeGeral;
     }
-
     public int getCapacidadeAtual() {
         return capacidadeAtual;
     }
-
     public void setCapacidadeAtual(int capacidadeAtual) {
         this.capacidadeAtual = capacidadeAtual;
     }
-
-    public int getQtdGeral() {
-        return qtdGeral;
-    }
-
-    public void setQtdGeral(int qtdGeral) {
-        this.qtdGeral = qtdGeral;
-    }
-
     public int getQtdEspecial() {
         return qtdEspecial;
     }
-
     public void setQtdEspecial(int qtdEspecial) {
         this.qtdEspecial = qtdEspecial;
     }
-
-    public FilmeModel getFilme() {
-        return filme;
+    public String getTipo() {
+        return tipo;
     }
-
-    public void setFilme(FilmeModel filme) {
-        this.filme = filme;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
-
     public List<String> getAssentos() {
         return assentos;
     }
-
     public void setAssentos(List<String> assentos) {
         this.assentos = assentos;
     }
-
 
 
 }

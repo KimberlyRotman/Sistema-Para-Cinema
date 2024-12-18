@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class FilmeView implements InterfaceView<FilmeModel> {
+public class FilmeView implements InterfaceView<FilmeModel>{
     private Scanner scanner;
 
     public FilmeView() {
