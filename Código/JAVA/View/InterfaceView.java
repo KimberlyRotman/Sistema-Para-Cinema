@@ -1,12 +1,9 @@
 package View;
 
-import java.util.List;
-
-public interface InterfaceView<T> {
-    // Método para obter dados de um objeto (exemplo: Filme, Usuário, etc.)
+public interface InterfaceView<T>{
+    
     T obterDados();
 
-    // Método para exibir os detalhes de um objeto
     void exibir(T objeto);
 
 }

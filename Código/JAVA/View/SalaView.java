@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class SalaView implements InterfaceView<SalaModel>{
     
-    private Scanner scanner;
+    private final Scanner scanner;
 
     public SalaView() {
         this.scanner = new Scanner(System.in);
@@ -33,9 +33,10 @@ public class SalaView implements InterfaceView<SalaModel>{
 
         
         List<String> assentos = new ArrayList<>();
-        for (int i = 0; i < capGeral; i++) {
-            System.out.print("Assento " + (i + 1) + ": ");
-            assentos.add(scanner.nextLine());
+        for (int i = 0; i <= capGeral; i++) {
+            System.out.println("Assento " + (i + 1) + ": ");
+            String assentoAdd = scanner.nextLine();
+            assentos.add(assentoAdd);
         }
         return new SalaModel(codSala, capGeral, capAtual, capEspecial, tipo, assentos);
 
