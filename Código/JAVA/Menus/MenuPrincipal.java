@@ -1,4 +1,4 @@
-package Mains;
+package Menus;
 import java.util.Scanner;
 
 public class MenuPrincipal {

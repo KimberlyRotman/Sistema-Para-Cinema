@@ -1,4 +1,4 @@
-package Mains;
+package Menus;
 
 import Controllers.SalaController;
 import Models.SalaModel;

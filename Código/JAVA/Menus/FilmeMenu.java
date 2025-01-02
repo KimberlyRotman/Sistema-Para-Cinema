@@ -1,4 +1,4 @@
-package Mains;
+package Menus;
 import Controllers.FilmeController;
 import Models.FilmeModel;
 import View.FilmeView;
