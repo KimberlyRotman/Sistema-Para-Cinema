@@ -12,8 +12,9 @@ public class MenuPrincipal {
 
                 FilmeMenu filmeMenu = new FilmeMenu();
                 SalaMenu salaMenu = new SalaMenu();
+                SessaoMenu sessaoMenu = new SessaoMenu();
 
-                
+
                 System.out.println("== Menu ==");
                 System.out.println("1. Cliente");
                 System.out.println("2. Filme");
@@ -28,10 +29,10 @@ public class MenuPrincipal {
 
                 switch(opcao){
                     case 1 -> filmeMenu.main(scanner);
-                    case 2 -> {filmeMenu.main(scanner);}
+                    case 2 -> filmeMenu.main(scanner);
                     case 3 -> filmeMenu.main(scanner);
-                    case 4 -> filmeMenu.main(scanner);
-                    case 5 -> {salaMenu.main(scanner);}
+                    case 4 -> sessaoMenu.main(scanner);
+                    case 5 -> salaMenu.main(scanner);
                     case 6 -> {
                         System.out.println("\n--Sistema Encerrado--");
                         scanner.close();

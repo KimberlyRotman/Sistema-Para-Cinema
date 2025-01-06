@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FilmeController implements InterfaceController<FilmeModel> {
-    private List<FilmeModel> filmes;
+    private final List<FilmeModel> filmes;
 
     public FilmeController() {
         this.filmes = new ArrayList<>();

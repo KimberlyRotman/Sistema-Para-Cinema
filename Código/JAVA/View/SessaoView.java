@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class SessaoView implements InterfaceView<SessaoModel>{
 
-    private Scanner scanner;
+    private final Scanner scanner;
     
 
     public SessaoView() {

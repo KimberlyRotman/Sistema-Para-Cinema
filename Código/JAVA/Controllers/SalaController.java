@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SalaController implements InterfaceController<SalaModel>{
-    private List<SalaModel> salas;
+    private final List<SalaModel> salas;
 
     public SalaController() {
         this.salas = new ArrayList<>();
@@ -41,9 +41,9 @@ public class SalaController implements InterfaceController<SalaModel>{
     }
 
     @Override
-    public void remover(int codSala) {
+    public void remover(int cod) {
         for (int i = 0; i < salas.size(); i++) {
-            if (salas.get(i).getCodSala() == codSala) {
+            if (salas.get(i).getCodSala() == cod) {
                 salas.remove(i);
                 System.out.println("Sala removida com sucesso!");
                 return;

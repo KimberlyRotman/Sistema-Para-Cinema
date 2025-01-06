@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ClienteController implements InterfaceController<ClienteModel> {
 
-    private List<ClienteModel> clientes;
+    private final List<ClienteModel> clientes;
 
     public ClienteController(List<ClienteModel> clientes) {
         this.clientes = clientes;
