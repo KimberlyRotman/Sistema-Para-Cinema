@@ -17,7 +17,7 @@ public class FilmeView implements InterfaceView<FilmeModel>{
     public FilmeModel obterDados() {
         return obterDadosFilmeModel();
     }
-
+    int cod = 1;
     // Método específico de Filme para obter os dados
     public FilmeModel obterDadosFilmeModel() {
         System.out.println("=== Cadastrar Filme ===");
@@ -47,7 +47,7 @@ public class FilmeView implements InterfaceView<FilmeModel>{
             }
         }
 
-        int cod = 1;
+        
         int codFilme = cod;
         cod++;
 

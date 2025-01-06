@@ -29,6 +29,18 @@ public class FilmeController implements InterfaceController<FilmeModel> {
         return null;
     }
 
+    public String buscarNome(int codFilme){
+        for (FilmeModel filme : filmes) {
+            if (filme.getCodFilme() == codFilme) {
+                return filme.getNome();
+            }
+        }
+        System.out.println("Filme não encontrado!");
+        return null;
+
+        
+    }
+
     // Implementação do método de editar
     @Override
     public void editar(int codFilme, FilmeModel novoFilme) {

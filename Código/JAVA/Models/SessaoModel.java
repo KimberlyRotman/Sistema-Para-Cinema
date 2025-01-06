@@ -1,46 +1,64 @@
 package Models;
-import java.sql.Date;
 import java.sql.Time;
 
 public class SessaoModel{
 
-
-    FilmeModel filme;
-    SalaModel sala;
-    Date data;  
+    int codSessao;
+    int codFilme;
+    int codSala;
+    String data;  
     Time horario;
 
-    
-    public SessaoModel(FilmeModel filme, SalaModel sala, Date data, Time horario) {
-        this.filme = filme;
-        this.sala = sala;
+    public SessaoModel(int codSessao, int codFilme, int codSala, String data, Time horario) {
+        this.codSessao = codSessao;
+        this.codFilme = codFilme;
+        this.codSala = codSala;
         this.data = data;
         this.horario = horario;
     }
-    
-    public FilmeModel getFilme() {
-        return filme;
+
+    public int getCodSessao() {
+        return codSessao;
     }
-    public void setFilme(FilmeModel filme) {
-        this.filme = filme;
+
+    public void setCodSessao(int codSessao) {
+        this.codSessao = codSessao;
     }
-    public SalaModel getSala() {
-        return sala;
+
+    public int getCodFilme() {
+        return codFilme;
     }
-    public void setSala(SalaModel sala) {
-        this.sala = sala;
+
+    public void setCodFilme(int codFilme) {
+        this.codFilme = codFilme;
     }
-    public Date getData() {
+
+    public int getCodSala() {
+        return codSala;
+    }
+
+    public void setCodSala(int codSala) {
+        this.codSala = codSala;
+    }
+
+    public String getData() {
         return data;
     }
-    public void setData(Date data) {
+
+    public void setData(String data) {
         this.data = data;
     }
+
     public Time getHorario() {
         return horario;
     }
+
     public void setHorario(Time horario) {
         this.horario = horario;
-    } 
+    }
+
+    
+
+    
 
 }

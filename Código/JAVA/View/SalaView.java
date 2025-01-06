@@ -12,11 +12,11 @@ public class SalaView implements InterfaceView<SalaModel>{
     public SalaView() {
         this.scanner = new Scanner(System.in);
     }
-
+    int cod = 1;
     @Override
     public SalaModel obterDados() {
         System.out.println("=== Cadastrar Sala ===");
-        int cod = 1;
+        
         int codSala = cod;
         cod++;
 

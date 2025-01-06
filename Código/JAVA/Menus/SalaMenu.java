@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class SalaMenu {
 
-    public static void main(Scanner scan) {
+    public void main(Scanner scan) {
         try{
 
             SalaController controller = new SalaController();
