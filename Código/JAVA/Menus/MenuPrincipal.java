@@ -4,7 +4,7 @@ import java.util.Scanner;
 //kim esteve aqui
 
 public class MenuPrincipal {
-    public void main(String[] args){
+    public static void main(String[] args){
 
 
         try (Scanner scanner = new Scanner(System.in)) {
