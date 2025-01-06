@@ -9,3 +9,5 @@ Na versão 1.0 o sistema deve permitir:
 3. cadastrar, editar e deletar filmes
 4. criar, começar, terminar, cancelar sessões de filmes.
 5. Gerenciar venda de ingressos
+
+Link para o Jira: https://kimrotmam.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?selectedIssue=SCRUM-13&atlOrigin=eyJpIjoiYTgwZDAzYWUxYjdkNDdlNThlNjJmMmE2YjQyNmEzNWQiLCJwIjoiaiJ9
