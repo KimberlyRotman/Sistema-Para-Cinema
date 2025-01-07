@@ -66,6 +66,9 @@ public class ClienteModel{
         this.ingressosComprados = ingressosComprados;
     }
 
+    public void adicionarIngresso(IngressoModel ingresso) {
+        ingressosComprados.add(ingresso);
+    }
 
 
 
