@@ -1,14 +1,14 @@
 package Controllers;
-
 import Models.ClienteModel;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteController implements InterfaceController<ClienteModel> {
 
     private final List<ClienteModel> clientes;
 
-    public ClienteController(List<ClienteModel> clientes) {
-        this.clientes = clientes;
+    public ClienteController() {
+        this.clientes = new ArrayList<>();
     }
 
     @Override
@@ -34,7 +34,7 @@ public class ClienteController implements InterfaceController<ClienteModel> {
         for (int i = 0; i < clientes.size(); i++) {
             if (clientes.get(i).getCpf() == cpf) {
             clientes.set(i, novoCliente);
-            System.out.println("Clienteeditado com sucesso!");
+            System.out.println("Cliente editado com sucesso!");
             return;
         }
     }
@@ -63,7 +63,7 @@ public class ClienteController implements InterfaceController<ClienteModel> {
             System.out.println("Nenhum cliente cadastrado.");
             return;
         }
-        System.out.println("\n=== Lista de Filmes (Nome e ID) ===");
+        System.out.println("\n=== Lista de Clientes (Nome e CPF) ===");
         for (ClienteModel cliente : clientes) {
             System.out.println("ID: " + cliente.getCpf() + " | Nome: " + cliente.getNome());
         }

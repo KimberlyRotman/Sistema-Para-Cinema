@@ -1,25 +1,25 @@
 package Menus;
 
-import Controllers.SalaController;
-import Models.SalaModel;
-import View.SalaView;
 import java.util.Scanner;
+import Controllers.ClienteController;
+import Models.ClienteModel;
+import View.ClienteView;
 
-public class SalaMenu {
-
+public class ClienteMenu {
+    
     public void main(Scanner scan) {
         try{
 
-            SalaController controller = new SalaController();
-            SalaView view = new SalaView();
+            ClienteController controller = new ClienteController();
+            ClienteView view = new ClienteView();
         
             while (true) {
-                System.out.println("\n=== Sala ===");
-                System.out.println("1. Cadastrar Sala");
-                System.out.println("2. Buscar Sala");
-                System.out.println("3. Editar Sala");
-                System.out.println("4. Deletar Sala");
-                System.out.println("5. Listar Salas");
+                System.out.println("\n=== Clientes ===");
+                System.out.println("1. Cadastrar Cliente");
+                System.out.println("2. Buscar Cliente");
+                System.out.println("3. Editar Cliente");
+                System.out.println("4. Deletar Cliente");
+                System.out.println("5. Listar Clientes");
                 System.out.println("6. Voltar para Menu Principal");
                 
 
@@ -37,25 +37,25 @@ public class SalaMenu {
 
                 switch (opcao) {
                     case 1 -> {
-                        SalaModel novaSala = view.obterDados();
-                        controller.cadastrar(novaSala);
+                        ClienteModel novoCliente = view.obterDados();
+                        controller.cadastrar(novoCliente);
                     }
                     case 2 -> {
-                        System.out.println("Digite o código da Sala: ");
+                        System.out.println("Digite o CPF do cliente: ");
                         int codBuscar = scan.nextInt();
                         
-                        SalaModel salaBuscada = controller.buscar(codBuscar);
-                        view.exibir(salaBuscada);
+                        ClienteModel clienteBuscado = controller.buscar(codBuscar);
+                        view.exibir(clienteBuscado);
                     }
                     case 3 -> {
-                        System.out.println("Digite o código da sala a ser editada: ");
+                        System.out.println("Digite o CPF do cliente a ser editado: ");
                         int codEditar = scan.nextInt();
-                        System.out.println("Digite os novos dados da Sala:");
-                        SalaModel salaEditada = view.obterDados();
-                        controller.editar(codEditar, salaEditada);
+                        System.out.println("Digite os novos dados do Cliente");
+                        ClienteModel clienteEditado = view.obterDados();
+                        controller.editar(codEditar, clienteEditado);
                     }
                     case 4 -> {
-                        System.out.println("Digite o código da sala a ser deletada: ");
+                        System.out.println("Digite o CPF do cliente a ser deletado: ");
                         int codDeletar = scan.nextInt();
                         controller.remover(codDeletar);
                     }
@@ -70,5 +70,4 @@ public class SalaMenu {
             
         } catch (Exception e){}
     }
-
 }

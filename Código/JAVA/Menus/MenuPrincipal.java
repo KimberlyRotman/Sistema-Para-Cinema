@@ -13,12 +13,13 @@ public class MenuPrincipal {
                 FilmeMenu filmeMenu = new FilmeMenu();
                 SalaMenu salaMenu = new SalaMenu();
                 SessaoMenu sessaoMenu = new SessaoMenu();
+                ClienteMenu clienteMenu = new ClienteMenu();
 
 
                 System.out.println("== Menu ==");
                 System.out.println("1. Cliente");
-                System.out.println("2. Filme");
-                System.out.println("3. Ingresso");
+                System.out.println("2. Realizar reserva");
+                System.out.println("3. Filme");
                 System.out.println("4. Sessão");
                 System.out.println("5. Sala");
                 System.out.println("6. Sair");
@@ -28,8 +29,8 @@ public class MenuPrincipal {
                 int opcao = scanner.nextInt();
 
                 switch(opcao){
-                    case 1 -> filmeMenu.main(scanner);
-                    case 2 -> filmeMenu.main(scanner);
+                    case 1 -> clienteMenu.main(scanner);
+                    case 2 -> System.out.println("a kim n fez ainda");
                     case 3 -> filmeMenu.main(scanner);
                     case 4 -> sessaoMenu.main(scanner);
                     case 5 -> salaMenu.main(scanner);

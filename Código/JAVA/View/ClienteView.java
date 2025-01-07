@@ -1,10 +1,9 @@
 package View;
 
+import Models.ClienteModel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import Models.ClienteModel;
-import Models.IngressoModel;
 
 
 
@@ -60,29 +59,8 @@ public class ClienteView implements InterfaceView<ClienteModel>{
             //concertar
         }
 
-        int numIngressos = -1;
-        while (numIngressos < 0) {
-            System.out.print("Comprou quantos ingressos? ");
-            try {
-                numIngressos = scanner.nextInt();
-                scanner.nextLine();
-                if (numIngressos < 0) {
-                    System.out.println("O número de Ingressos não pode ser negativo.");
-                }
-            } catch (Exception e) {
-                System.out.println("Por favor, insira um número válido.");
-                scanner.nextLine();
-            }
-        }
-        List<IngressoModel> ingressosComprados = new ArrayList<>();
-        for (int i = 0; i < numIngressos; i++) {
-            //fazer busca de ingresso
-            System.out.print("Ingresso " + (i + 1) + ": ");
-            ingressosComprados.add(scanner.nextLine());
-            //concertar
-        }
 
-        return new ClienteModel(contatoTel, cpf, email, idade, ingressosComprados, nome, tipo);
+        return new ClienteModel(contatoTel, cpf, email, idade, null, nome, tipo);
     
     }
 
@@ -98,7 +76,6 @@ public class ClienteView implements InterfaceView<ClienteModel>{
             System.out.println("idade: " + cliente.getIdade());
             System.out.println("tipo: " + cliente.getTipo());
             System.out.println("Telefones: " + cliente.getContatoTel());
-            System.out.println("Duração: " + String.join(", ", cliente.getIngressosComprados()));
         }
     }
 
