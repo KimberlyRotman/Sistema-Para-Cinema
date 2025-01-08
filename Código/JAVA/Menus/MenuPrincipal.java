@@ -1,8 +1,6 @@
 package Menus;
 import java.util.Scanner;
 
-//kim esteve aqui
-
 public class MenuPrincipal {
     public static void main(String[] args){
 
