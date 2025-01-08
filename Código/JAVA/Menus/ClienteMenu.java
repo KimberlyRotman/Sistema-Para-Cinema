@@ -14,7 +14,7 @@ public class ClienteMenu {
         return controller;
     }
 
-    public void main(Scanner scan) {
+    public static void main(Scanner scan) {
         try{
 
             

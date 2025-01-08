@@ -14,7 +14,6 @@ public class IngressoController {
 
     public void comprar(IngressoModel ingresso){
         ingressos.add(ingresso);
-        ingresso.getCliente().adicionarIngresso(ingresso);
         System.out.println("Compra realizada com sucesso");
     }
 

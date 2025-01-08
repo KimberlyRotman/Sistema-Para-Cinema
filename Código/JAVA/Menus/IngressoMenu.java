@@ -33,8 +33,7 @@ public class IngressoMenu {
                 }
                 switch (opcao) {
                     case 1 -> {
-                        IngressoModel novaCompra = view.realizarCompra(clienteMenu.ofereceClienteController(),salaMenu.ofereceSalaController(), sessaoMenu.ofereceSessaoController());
-                        controller.comprar(novaCompra);
+                        controller.comprar(view.realizarCompra(clienteMenu.ofereceClienteController(),salaMenu.ofereceSalaController(), sessaoMenu.ofereceSessaoController()));
                     }
                     case 2 -> {
                         System.out.print("Digite o código do ingresso");

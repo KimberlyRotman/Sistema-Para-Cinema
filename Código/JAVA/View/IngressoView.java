@@ -29,6 +29,7 @@ public class IngressoView implements InterfaceView<IngressoModel>{
         System.out.println("Insira CPF do cliente: ");
         int cpf = scanner.nextInt();
         ClienteModel cliente = controllerCli.buscar(cpf);
+        System.out.println("Nome do cliente: " + cliente.getNome());
 
 
 
@@ -52,8 +53,10 @@ public class IngressoView implements InterfaceView<IngressoModel>{
         System.out.println("Insira o id da sessão: ");
         int idSessao = scanner.nextInt();
         SessaoModel sessao = controllerSe.buscar(idSessao);
-
+        System.out.println("Sessão encontrada, assentos disponíveis: " + sessao.getAssentosDisponiveis());
+        
         System.out.println("escolha seu assento: ");
+        
         System.out.println(controllerSe.buscarAssento(idSessao));
         String assento = scanner.nextLine();
         assento = scanner.nextLine();

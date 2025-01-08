@@ -14,7 +14,7 @@ public class SessaoMenu{
         return controller;
     }
 
-    public void main(Scanner scanner, SalaMenu salaMenu, FilmeMenu filmeMenu) {
+    public static void main(Scanner scanner, SalaMenu salaMenu, FilmeMenu filmeMenu) {
         try{
             while (true) {
                 System.out.println("\n=== Sessões ===");

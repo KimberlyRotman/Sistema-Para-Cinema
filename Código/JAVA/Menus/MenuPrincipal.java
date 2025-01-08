@@ -23,14 +23,13 @@ public class MenuPrincipal {
                 System.out.println("6. Sair");
                 System.out.println("Digite escolha: ");
                 
-
                 int opcao = scanner.nextInt();
 
                 switch(opcao){
-                    case 1 -> clienteMenu.main(scanner);
+                    case 1 -> ClienteMenu.main(scanner);
                     case 2 -> IngressoMenu.main(scanner, salaMenu, clienteMenu, sessaoMenu);
                     case 3 -> FilmeMenu.main(scanner);
-                    case 4 -> sessaoMenu.main(scanner, salaMenu, filmeMenu);
+                    case 4 -> SessaoMenu.main(scanner, salaMenu, filmeMenu);
                     case 5 -> SalaMenu.main(scanner);
                     case 6 -> {
                         System.out.println("\n--Sistema Encerrado--");
