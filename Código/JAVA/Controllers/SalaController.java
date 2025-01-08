@@ -7,6 +7,22 @@ import java.util.List;
 public class SalaController implements InterfaceController<SalaModel>{
     private final List<SalaModel> salas;
 
+
+    public List<String> ofereceAssentos(int id){
+        
+        for (SalaModel sala : salas) {
+            if (sala.getCodSala() == id) {
+                SalaModel salinha =  sala;
+                System.out.println("Sala encontrada");
+                return salinha.getAssentos();
+            }
+        }
+        System.out.println("Sala não encontrada");
+        return null;
+        
+    }
+
+  
     public SalaController() {
         this.salas = new ArrayList<>();
     }
@@ -54,7 +70,15 @@ public class SalaController implements InterfaceController<SalaModel>{
 
     @Override
     public List<SalaModel> listarTodos() {
-        return salas;
+        if (salas.isEmpty()) {
+            System.out.println("Nenhuma sala cadastrado.");
+            return null;
+        }
+        System.out.println("\n=== Lista de Salas (ID e capacidade geral) ===");
+        for (SalaModel sala : salas) {
+            System.out.println("ID: " + sala.getCodSala() + " | Assentos: " + sala.getCapacidadeGeral());
+        }
+        return null;
     }
 
 

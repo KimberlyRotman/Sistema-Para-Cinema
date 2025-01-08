@@ -59,7 +59,7 @@ public class ClienteMenu {
                         int codDeletar = scan.nextInt();
                         controller.remover(codDeletar);
                     }
-                    case 5 -> controller.listarTodos();
+                    case 5 -> controller.exibirNomesECpf();
                     case 6 -> {
                         return;
                     }

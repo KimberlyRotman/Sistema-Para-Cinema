@@ -7,12 +7,16 @@ import java.util.Scanner;
 
 public class SalaMenu {
 
-    public void main(Scanner scan) {
+    static SalaController controller = new SalaController();
+    static SalaView view = new SalaView();
+    public SalaController ofereceSalaController(){
+        return controller;
+    }
+
+    public static void main(Scanner scan) {
+        
         try{
 
-            SalaController controller = new SalaController();
-            SalaView view = new SalaView();
-        
             while (true) {
                 System.out.println("\n=== Sala ===");
                 System.out.println("1. Cadastrar Sala");

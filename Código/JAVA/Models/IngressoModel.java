@@ -4,14 +4,13 @@ public class IngressoModel{
 
     ClienteModel cliente;
     int nroIngresso;
-    String tipo;
+    int tipo;
     Double valorIngresso;
     Double valorPago;
     SessaoModel sessao;
     String asssentoCliente;
 
-    
-    public IngressoModel(ClienteModel cliente, int nroIngresso, String tipo, Double valorIngresso, Double valorPago,
+    public IngressoModel(ClienteModel cliente, int nroIngresso, int tipo, Double valorIngresso, Double valorPago,
             SessaoModel sessao, String asssentoCliente) {
         this.cliente = cliente;
         this.nroIngresso = nroIngresso;
@@ -21,49 +20,64 @@ public class IngressoModel{
         this.sessao = sessao;
         this.asssentoCliente = asssentoCliente;
     }
+
     public ClienteModel getCliente() {
         return cliente;
     }
+
     public void setCliente(ClienteModel cliente) {
         this.cliente = cliente;
     }
+
     public int getNroIngresso() {
         return nroIngresso;
     }
+
     public void setNroIngresso(int nroIngresso) {
         this.nroIngresso = nroIngresso;
     }
-    public String getTipo() {
+
+    public int getTipo() {
         return tipo;
     }
-    public void setTipo(String tipo) {
+
+    public void setTipo(int tipo) {
         this.tipo = tipo;
     }
+
     public Double getValorIngresso() {
         return valorIngresso;
     }
+
     public void setValorIngresso(Double valorIngresso) {
         this.valorIngresso = valorIngresso;
     }
+
     public Double getValorPago() {
         return valorPago;
     }
+
     public void setValorPago(Double valorPago) {
         this.valorPago = valorPago;
     }
+
     public SessaoModel getSessao() {
         return sessao;
     }
+
     public void setSessao(SessaoModel sessao) {
         this.sessao = sessao;
     }
+
     public String getAsssentoCliente() {
         return asssentoCliente;
     }
+
     public void setAsssentoCliente(String asssentoCliente) {
         this.asssentoCliente = asssentoCliente;
     }
 
+    
     
     
 }

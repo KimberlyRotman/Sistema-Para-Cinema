@@ -4,15 +4,14 @@ import java.util.Scanner;
 public class MenuPrincipal {
     public static void main(String[] args){
 
+        FilmeMenu filmeMenu = new FilmeMenu();
+        SalaMenu salaMenu = new SalaMenu();
+        SessaoMenu sessaoMenu = new SessaoMenu();
+        ClienteMenu clienteMenu = new ClienteMenu();
 
-        try (Scanner scanner = new Scanner(System.in)) {
+
+        try (final Scanner scanner = new Scanner(System.in)) {
             while(true){
-
-                FilmeMenu filmeMenu = new FilmeMenu();
-                SalaMenu salaMenu = new SalaMenu();
-                SessaoMenu sessaoMenu = new SessaoMenu();
-                ClienteMenu clienteMenu = new ClienteMenu();
-
 
                 System.out.println("== Menu ==");
                 System.out.println("1. Cliente");
@@ -29,8 +28,8 @@ public class MenuPrincipal {
                 switch(opcao){
                     case 1 -> clienteMenu.main(scanner);
                     case 2 -> System.out.println("a kim n fez ainda");
-                    case 3 -> filmeMenu.main(scanner);
-                    case 4 -> sessaoMenu.main(scanner);
+                    case 3 -> FilmeMenu.main(scanner);
+                    case 4 -> sessaoMenu.main(scanner, salaMenu, filmeMenu);
                     case 5 -> salaMenu.main(scanner);
                     case 6 -> {
                         System.out.println("\n--Sistema Encerrado--");

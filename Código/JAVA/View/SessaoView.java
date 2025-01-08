@@ -1,11 +1,13 @@
 package View;
 
 import Controllers.FilmeController;
+import Controllers.SalaController;
 import Models.SessaoModel;
 import java.sql.Time;
+import java.util.List;
 import java.util.Scanner;
 
-public class SessaoView implements InterfaceView<SessaoModel>{
+public class SessaoView{
 
     private final Scanner scanner;
     
@@ -16,8 +18,9 @@ public class SessaoView implements InterfaceView<SessaoModel>{
     }
 
     int cod = 1;
-    @Override
-    public SessaoModel obterDados() {
+
+    
+    public SessaoModel obterDadosSessao(SalaController controller) {
         System.out.println("=== Cadastrar Sessao ===");
 
         
@@ -34,6 +37,7 @@ public class SessaoView implements InterfaceView<SessaoModel>{
 
         System.out.print("Data (dd/mm/aaaa): ");
         String data = scanner.nextLine();
+        data = scanner.nextLine();
 
         Time horario = null;
         while (horario == null) {
@@ -45,7 +49,11 @@ public class SessaoView implements InterfaceView<SessaoModel>{
                 System.out.println("Formato inválido! Insira a duração no formato hh:mm:ss.");
             }
         }
-        return new SessaoModel(codSessao, codFilme, codSala, data, horario);
+            
+        List <String> assentos = (controller.ofereceAssentos(codSala));
+        
+
+        return new SessaoModel(codSessao, codFilme, codSala, data, horario, assentos);
 
 
     }
@@ -60,12 +68,10 @@ public class SessaoView implements InterfaceView<SessaoModel>{
             System.out.println("Horario: " + sessao.getHorario());
             System.out.println("Filme exibido: " + controller.buscarNome(sessao.getCodFilme()));
         }
+        
     }
 
-    @Override
-    public void exibir(SessaoModel objeto) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exibir'");
-    }
+    
+
 
 }
