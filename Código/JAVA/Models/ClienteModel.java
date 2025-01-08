@@ -7,11 +7,11 @@ public class ClienteModel{
     String nome;
     int idade;
     String email;
-    String tipo; //se é cadeirante por exemplo ou sucetível a desconto
+    int tipo; //se é cadeirante por exemplo ou sucetível a desconto
     List<Integer> contatoTel;
     List<IngressoModel> ingressosComprados;
 
-    public ClienteModel(List<Integer> contatoTel, int cpf, String email, int idade, List<IngressoModel> ingressosComprados, String nome, String tipo) {
+    public ClienteModel(List<Integer> contatoTel, int cpf, String email, int idade, List<IngressoModel> ingressosComprados, String nome, int tipo) {
         this.contatoTel = contatoTel;
         this.cpf = cpf;
         this.email = email;
@@ -47,10 +47,10 @@ public class ClienteModel{
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getTipo() {
+    public int getTipo() {
         return tipo;
     }
-    public void setTipo(String tipo) {
+    public void setTipo(int tipo) {
         this.tipo = tipo;
     }
     public List<Integer> getContatoTel() {

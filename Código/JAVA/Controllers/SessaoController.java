@@ -12,7 +12,6 @@ public class SessaoController implements InterfaceController<SessaoModel>{
         this.sessoes = new ArrayList<>();
     }
 
-
     @Override
     public void cadastrar(SessaoModel obj) {
         sessoes.add(obj);
@@ -28,6 +27,11 @@ public class SessaoController implements InterfaceController<SessaoModel>{
         }
         System.out.println("Sessão não encontrada!");
         return null;
+    }
+
+    public List<String> buscarAssento (int id){
+        SessaoModel sessao = buscar(id);
+        return sessao.getAssentosDisponiveis();
     }
 
     @Override

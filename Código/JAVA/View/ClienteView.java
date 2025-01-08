@@ -28,12 +28,21 @@ public class ClienteView implements InterfaceView<ClienteModel>{
 
         System.out.print("email: ");
         String email = scanner.nextLine();
+        email = scanner.nextLine();
+        
 
         System.out.print("Idade: ");
         int idade = scanner.nextInt();
 
-        System.out.print("tipo: ");
-        String tipo = scanner.nextLine();
+        System.out.println("Insira o tipo do cliente: ");
+        System.out.println("1. PCD");
+        System.out.println("2. Estudante ou Professor");
+        System.out.println("3. Idoso");
+        System.out.println("3. Empresa parceira");
+        System.out.println("3. Doador de sangue");
+        System.out.println("4. Normal");
+
+        int tipo = scanner.nextInt();
 
 
 

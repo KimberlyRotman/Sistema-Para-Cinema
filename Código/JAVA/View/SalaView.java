@@ -21,7 +21,10 @@ public class SalaView implements InterfaceView<SalaModel>{
         cod++;
 
         System.out.println("Tipo da Sala: ");
-        String tipo = scanner.nextLine();
+        System.out.println("1. premium ");
+        System.out.println("2. normal ");
+        int tipo = scanner.nextInt();
+        
 
         System.out.println("Capacidade geral: ");
         int capGeral = scanner.nextInt();
@@ -30,11 +33,12 @@ public class SalaView implements InterfaceView<SalaModel>{
 
         System.out.println("Quantidade de Assentos especiais: ");
         int capEspecial = scanner.nextInt();
+        String vazio = scanner.nextLine();
 
         
         List<String> assentos = new ArrayList<>();
-        for (int i = 0; i <= capGeral; i++) {
-            System.out.println("Assento " + (i + 1) + ": ");
+        for (int i = 1; i <= capGeral; i++) {
+            System.out.println("Assento " + (i) + ": ");
             String assentoAdd = scanner.nextLine();
             assentos.add(assentoAdd);
         }

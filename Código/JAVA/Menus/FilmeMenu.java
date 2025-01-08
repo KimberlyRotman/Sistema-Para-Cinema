@@ -6,36 +6,43 @@ import java.util.Scanner;
 
 public class FilmeMenu {
     
-    public void main(Scanner scanner) {
-        FilmeController controller = new FilmeController();
-        FilmeView view = new FilmeView();
-        try  {
-            while (true) {
-                System.out.println("\n=== Filmes ===");
-                System.out.println("1. Cadastrar Filme");
-                System.out.println("2. Buscar Filme");
-                System.out.println("3. Editar Filme");
-                System.out.println("4. Deletar Filme");
-                System.out.println("5. Listar Filmes");
-                System.out.println("6. Voltar para Menu Principal");
-                
-
-                int opcao;
-                while (true) {
-                    System.out.println("Escolha uma opção: ");
-                    if (scanner.hasNextInt()) {
-                        opcao = scanner.nextInt();
-                        break;
-                    } else {
-                        System.out.println("Erro: A entrada não é um número inteiro válido! Tente novamente");
-                        scanner.next(); // Consome a entrada inválida para evitar um loop infinito
-                    }
-                }
+    static FilmeController controller = new FilmeController();
+    static FilmeView view = new FilmeView();
+        
+        public FilmeController ofereceController(){
+            return controller;
+        }
+        
+    
+        public static void main(Scanner scanner) {
             
-
-                switch (opcao) {
-                    case 1 -> {
-                        FilmeModel novoFilme = view.obterDadosFilmeModel();
+            try  {
+                while (true) {
+                    System.out.println("\n=== Filmes ===");
+                    System.out.println("1. Cadastrar Filme");
+                    System.out.println("2. Buscar Filme");
+                    System.out.println("3. Editar Filme");
+                    System.out.println("4. Deletar Filme");
+                    System.out.println("5. Listar Filmes");
+                    System.out.println("6. Voltar para Menu Principal");
+                    
+    
+                    int opcao;
+                    while (true) {
+                        System.out.println("Escolha uma opção: ");
+                        if (scanner.hasNextInt()) {
+                            opcao = scanner.nextInt();
+                            break;
+                        } else {
+                            System.out.println("Erro: A entrada não é um número inteiro válido! Tente novamente");
+                            scanner.next(); // Consome a entrada inválida para evitar um loop infinito
+                        }
+                    }
+                
+    
+                    switch (opcao) {
+                        case 1 -> {
+                            FilmeModel novoFilme = view.obterDadosFilmeModel();
                         controller.cadastrar(novoFilme);
                     }
                     case 2 -> {
