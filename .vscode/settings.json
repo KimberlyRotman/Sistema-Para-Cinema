@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        "Código/JAVA",
+        "Código/BancodeDados"
+    ],
+    "java.project.referencedLibraries": [
+        "c:\\Users\\HOME-YASMIN\\Desktop\\mysql-connector-j-9.0.0.jar"
+    ]
+}
