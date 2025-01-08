@@ -12,8 +12,8 @@ public class IngressoView implements InterfaceView<IngressoModel>{
 
     private final Scanner scanner;
 
-    public IngressoView(Scanner scanner) {
-        this.scanner = scanner;
+    public IngressoView() {
+        this.scanner = new Scanner(System.in);
     }
 
     int cod = 1;

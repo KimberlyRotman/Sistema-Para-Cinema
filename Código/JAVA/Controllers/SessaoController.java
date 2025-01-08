@@ -63,5 +63,8 @@ public class SessaoController implements InterfaceController<SessaoModel>{
         return sessoes;
     }
 
+    public void listarSessao(){
+        System.out.println(sessoes);
+    }
 
 }

@@ -59,7 +59,7 @@ public class SessaoMenu{
                         
                     controller.remover(codDeletar);
                 }
-                case 5 -> controller.listarTodos();
+                case 5 -> controller.listarSessao();
                 case 6 -> {
                     return;}
         
