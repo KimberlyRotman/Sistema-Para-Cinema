@@ -20,7 +20,7 @@ public class IngressoView implements InterfaceView<IngressoModel>{
 
     @Override
     public IngressoModel obterDados() {
-        // TODO Auto-generated method stub
+        
         throw new UnsupportedOperationException("Unimplemented method 'obterDados'");
     }
 
@@ -56,6 +56,7 @@ public class IngressoView implements InterfaceView<IngressoModel>{
         System.out.println("escolha seu assento: ");
         System.out.println(controllerSe.buscarAssento(idSessao));
         String assento = scanner.nextLine();
+        assento = scanner.nextLine();
 
 
 
@@ -64,7 +65,7 @@ public class IngressoView implements InterfaceView<IngressoModel>{
         
             @Override
     public void exibir(IngressoModel objeto) {
-        // TODO Auto-generated method stub
+        
         throw new UnsupportedOperationException("Unimplemented method 'exibir'");
     }
 

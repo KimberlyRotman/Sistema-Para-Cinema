@@ -1,17 +1,23 @@
 package Menus;
 
-import java.util.Scanner;
 import Controllers.ClienteController;
 import Models.ClienteModel;
 import View.ClienteView;
+import java.util.Scanner;
 
 public class ClienteMenu {
+
+    static ClienteController controller = new ClienteController();
+    static ClienteView view = new ClienteView();
     
+    public ClienteController ofereceClienteController(){
+        return controller;
+    }
+
     public void main(Scanner scan) {
         try{
 
-            ClienteController controller = new ClienteController();
-            ClienteView view = new ClienteView();
+            
         
             while (true) {
                 System.out.println("\n=== Clientes ===");

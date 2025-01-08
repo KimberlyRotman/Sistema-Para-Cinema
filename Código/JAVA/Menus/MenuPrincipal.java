@@ -10,6 +10,7 @@ public class MenuPrincipal {
         SalaMenu salaMenu = new SalaMenu();
         SessaoMenu sessaoMenu = new SessaoMenu();
         ClienteMenu clienteMenu = new ClienteMenu();
+        IngressoMenu ingressoMenu = new IngressoMenu();
 
 
         try (final Scanner scanner = new Scanner(System.in)) {
@@ -17,7 +18,7 @@ public class MenuPrincipal {
 
                 System.out.println("== Menu ==");
                 System.out.println("1. Cliente");
-                System.out.println("2. Realizar reserva");
+                System.out.println("2. Realizar compra");
                 System.out.println("3. Filme");
                 System.out.println("4. Sessão");
                 System.out.println("5. Sala");
@@ -29,10 +30,10 @@ public class MenuPrincipal {
 
                 switch(opcao){
                     case 1 -> clienteMenu.main(scanner);
-                    case 2 -> System.out.println("a kim n fez ainda");
+                    case 2 -> IngressoMenu.main(scanner, salaMenu, clienteMenu, sessaoMenu);
                     case 3 -> FilmeMenu.main(scanner);
                     case 4 -> sessaoMenu.main(scanner, salaMenu, filmeMenu);
-                    case 5 -> salaMenu.main(scanner);
+                    case 5 -> SalaMenu.main(scanner);
                     case 6 -> {
                         System.out.println("\n--Sistema Encerrado--");
                         scanner.close();

@@ -7,8 +7,13 @@ import java.util.Scanner;
 
 
 public class SessaoMenu{
-    SessaoController controller = new SessaoController();
-    SessaoView view = new SessaoView();
+    static SessaoController controller = new SessaoController();
+    static SessaoView view = new SessaoView();
+
+    public SessaoController ofereceSessaoController(){
+        return controller;
+    }
+
     public void main(Scanner scanner, SalaMenu salaMenu, FilmeMenu filmeMenu) {
         try{
             while (true) {

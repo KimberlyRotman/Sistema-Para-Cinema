@@ -9,6 +9,7 @@ public class SalaMenu {
 
     static SalaController controller = new SalaController();
     static SalaView view = new SalaView();
+    
     public SalaController ofereceSalaController(){
         return controller;
     }
