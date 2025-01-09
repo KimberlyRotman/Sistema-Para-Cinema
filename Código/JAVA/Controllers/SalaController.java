@@ -7,7 +7,10 @@ import java.util.List;
 public class SalaController implements InterfaceController<SalaModel>{
     private final List<SalaModel> salas;
 
-
+    public SalaController() {
+        this.salas = new ArrayList<>();
+    }
+    
     public List<String> ofereceAssentos(int id){
         
         for (SalaModel sala : salas) {
@@ -19,12 +22,6 @@ public class SalaController implements InterfaceController<SalaModel>{
         }
         System.out.println("Sala não encontrada");
         return null;
-        
-    }
-
-  
-    public SalaController() {
-        this.salas = new ArrayList<>();
     }
 
     @Override

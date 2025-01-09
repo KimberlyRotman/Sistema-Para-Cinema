@@ -6,7 +6,6 @@ import View.ClienteView;
 import java.util.Scanner;
 
 public class ClienteMenu {
-
     static ClienteController controller = new ClienteController();
     static ClienteView view = new ClienteView();
     
@@ -16,9 +15,6 @@ public class ClienteMenu {
 
     public static void main(Scanner scan) {
         try{
-
-            
-        
             while (true) {
                 System.out.println("\n=== Clientes ===");
                 System.out.println("1. Cadastrar Cliente");
@@ -66,9 +62,7 @@ public class ClienteMenu {
                         controller.remover(codDeletar);
                     }
                     case 5 -> controller.exibirNomesECpf();
-                    case 6 -> {
-                        return;
-                    }
+                    case 6 -> {return;}
                     default -> System.out.println("Opção inválida!");
                 }
                 

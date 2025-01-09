@@ -7,21 +7,17 @@ public class ClienteModel{
     String nome;
     int idade;
     String email;
-    int tipo; //se é cadeirante por exemplo ou sucetível a desconto
+    int tipo; //Se é sucetível a desconto (PCD, cadeirante, )
     List<Integer> contatoTel;
-    List<IngressoModel> ingressosComprados;
 
-    public ClienteModel(List<Integer> contatoTel, int cpf, String email, int idade, List<IngressoModel> ingressosComprados, String nome, int tipo) {
+    public ClienteModel(List<Integer> contatoTel, int cpf, String email, int idade, String nome, int tipo) {
         this.contatoTel = contatoTel;
         this.cpf = cpf;
         this.email = email;
         this.idade = idade;
-        this.ingressosComprados = ingressosComprados;
         this.nome = nome;
         this.tipo = tipo;
     }
-
-
 
     public int getCpf() {
         return cpf;
@@ -59,20 +55,4 @@ public class ClienteModel{
     public void setContatoTel(List<Integer> contatoTel) {
         this.contatoTel = contatoTel;
     }
-    public List<IngressoModel> getIngressosComprados() {
-        return ingressosComprados;
-    }
-    public void setIngressosComprados(List<IngressoModel> ingressosComprados) {
-        this.ingressosComprados = ingressosComprados;
-    }
-
-    public void adicionarIngresso(IngressoModel ingresso) {
-        ingressosComprados.add(ingresso);
-    }
-
-
-
-
-
-    
 }

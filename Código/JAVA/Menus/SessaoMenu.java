@@ -5,7 +5,6 @@ import Models.SessaoModel;
 import View.SessaoView;
 import java.util.Scanner;
 
-
 public class SessaoMenu{
     static SessaoController controller = new SessaoController();
     static SessaoView view = new SessaoView();
@@ -34,7 +33,7 @@ public class SessaoMenu{
                         break;
                     } else {
                         System.out.println("Erro: A entrada não é um número inteiro válido! Tente novamente");
-                        scanner.next(); // Consome a entrada inválida para evitar um loop infinito
+                        scanner.next();
                     }
                 }
                 
@@ -65,9 +64,7 @@ public class SessaoMenu{
                     controller.remover(codDeletar);
                 }
                 case 5 -> controller.listarSessao();
-                case 6 -> {
-                    return;}
-        
+                case 6 -> {return;}
                 default -> {System.out.println("Opção inválida!");}
             }
                 

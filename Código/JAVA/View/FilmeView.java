@@ -6,20 +6,15 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FilmeView implements InterfaceView<FilmeModel>{
-    private Scanner scanner;
+    private final Scanner scanner;
+    int cod = 1;
 
     public FilmeView() {
         this.scanner = new Scanner(System.in);
     }
 
-    // Implementação do método obterDados da interface BaseView
     @Override
     public FilmeModel obterDados() {
-        return obterDadosFilmeModel();
-    }
-    int cod = 1;
-    // Método específico de Filme para obter os dados
-    public FilmeModel obterDadosFilmeModel() {
         System.out.println("=== Cadastrar Filme ===");
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
@@ -77,14 +72,8 @@ public class FilmeView implements InterfaceView<FilmeModel>{
         return new FilmeModel(atores, codFilme, dataLancamento, diretor, duracao, formato, genero, nome, sinopse);
     }
 
-    // Implementação do método exibir da interface BaseView
     @Override
     public void exibir(FilmeModel filme) {
-        exibirFilme(filme);
-    }
-
-    // Método específico de Filme para exibir os detalhes
-    public void exibirFilme(FilmeModel filme) {
         if (filme == null) {
             System.out.println("Nenhum filme encontrado.");
         } else {

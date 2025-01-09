@@ -6,7 +6,6 @@ import View.SalaView;
 import java.util.Scanner;
 
 public class SalaMenu {
-
     static SalaController controller = new SalaController();
     static SalaView view = new SalaView();
     

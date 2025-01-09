@@ -5,9 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
-
-
 public class ClienteView implements InterfaceView<ClienteModel>{
 
     private Scanner scanner;
@@ -44,8 +41,6 @@ public class ClienteView implements InterfaceView<ClienteModel>{
 
         int tipo = scanner.nextInt();
 
-
-
         int numTelefones = -1;
         while (numTelefones < 0) {
             System.out.print("Possui quantos telefones?");
@@ -67,10 +62,7 @@ public class ClienteView implements InterfaceView<ClienteModel>{
             contatoTel.add(scanner.nextInt());
             //concertar
         }
-
-
-        return new ClienteModel(contatoTel, cpf, email, idade, null, nome, tipo);
-    
+        return new ClienteModel(contatoTel, cpf, email, idade, nome, tipo);
     }
 
     @Override
@@ -87,6 +79,4 @@ public class ClienteView implements InterfaceView<ClienteModel>{
             System.out.println("Telefones: " + cliente.getContatoTel());
         }
     }
-
-    
 }

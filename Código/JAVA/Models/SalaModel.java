@@ -67,8 +67,4 @@ public class SalaModel{
     public void setAssentos(List<String> assentos) {
         this.assentos = assentos;
     }
-
-    
-
-
 }

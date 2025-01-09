@@ -80,6 +80,4 @@ public class FilmeModel{
     public void setAtores(List<String> atores) {
         this.atores = atores;
     }
-    
-
 }

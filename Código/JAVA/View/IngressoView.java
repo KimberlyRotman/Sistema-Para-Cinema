@@ -8,20 +8,13 @@ import Models.IngressoModel;
 import Models.SessaoModel;
 import java.util.Scanner;
 
-public class IngressoView implements InterfaceView<IngressoModel>{
+public class IngressoView{
 
     private final Scanner scanner;
+    int cod = 1;
 
     public IngressoView() {
         this.scanner = new Scanner(System.in);
-    }
-
-    int cod = 1;
-
-    @Override
-    public IngressoModel obterDados() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'obterDados'");
     }
 
     public IngressoModel realizarCompra(ClienteController controllerCli, SalaController controllerSa, SessaoController controllerSe) {
@@ -30,8 +23,6 @@ public class IngressoView implements InterfaceView<IngressoModel>{
         int cpf = scanner.nextInt();
         ClienteModel cliente = controllerCli.buscar(cpf);
         System.out.println("Nome do cliente: " + cliente.getNome());
-
-
 
         int idIngresso = cod;
         cod++;
@@ -48,8 +39,6 @@ public class IngressoView implements InterfaceView<IngressoModel>{
             vlrPago = vlrTotal/50;
         }
 
-    
-
         System.out.println("Insira o id da sessão: ");
         int idSessao = scanner.nextInt();
         SessaoModel sessao = controllerSe.buscar(idSessao);
@@ -61,18 +50,6 @@ public class IngressoView implements InterfaceView<IngressoModel>{
         String assento = scanner.nextLine();
         assento = scanner.nextLine();
 
-
-
         return new IngressoModel(cliente, idIngresso, tipoCliente, vlrTotal, vlrPago, sessao, assento);
     }
-        
-            @Override
-    public void exibir(IngressoModel objeto) {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'exibir'");
-    }
-
-    
-    
-
 }

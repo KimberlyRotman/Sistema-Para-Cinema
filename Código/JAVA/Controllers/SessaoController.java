@@ -64,7 +64,14 @@ public class SessaoController implements InterfaceController<SessaoModel>{
     }
 
     public void listarSessao(){
-        System.out.println(sessoes);
+        if (sessoes.isEmpty()) {
+            System.out.println("Nenhuma sessao cadastrada.");
+            return;
+        }
+        System.out.println("\n=== Lista de Sessões ===");
+        for (SessaoModel sessao : sessoes) {
+            System.out.println("ID: " + sessao.getCodSessao() + " | Sala: 0" + sessao.getCodSala() + " | Código do Filme: " + sessao.getCodFilme());
+        }
+        return;
     }
-
 }

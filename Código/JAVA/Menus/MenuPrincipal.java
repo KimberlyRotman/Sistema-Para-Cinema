@@ -2,13 +2,13 @@ package Menus;
 import java.util.Scanner;
 
 public class MenuPrincipal {
+    
     public static void main(String[] args){
 
         FilmeMenu filmeMenu = new FilmeMenu();
         SalaMenu salaMenu = new SalaMenu();
         SessaoMenu sessaoMenu = new SessaoMenu();
         ClienteMenu clienteMenu = new ClienteMenu();
-        IngressoMenu ingressoMenu = new IngressoMenu();
 
 
         try (final Scanner scanner = new Scanner(System.in)) {
@@ -36,14 +36,9 @@ public class MenuPrincipal {
                         scanner.close();
                         return;
                     }
-                    default -> System.out.println("Opção inválida!");
-                        
+                    default -> System.out.println("Opção inválida!");  
                 }
-                
-                
             }
         }
-        
     }
-    
 }

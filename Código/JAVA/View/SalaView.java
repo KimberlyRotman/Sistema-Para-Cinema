@@ -8,34 +8,58 @@ import java.util.Scanner;
 public class SalaView implements InterfaceView<SalaModel>{
     
     private final Scanner scanner;
+    int cod = 1;
 
     public SalaView() {
         this.scanner = new Scanner(System.in);
     }
-    int cod = 1;
+    
     @Override
     public SalaModel obterDados() {
+
         System.out.println("=== Cadastrar Sala ===");
-        
         int codSala = cod;
         cod++;
 
         System.out.println("Tipo da Sala: ");
-        System.out.println("1. premium ");
-        System.out.println("2. normal ");
+        System.out.println("1. normal ");
+        System.out.println("2. premium ");
         int tipo = scanner.nextInt();
         
 
-        System.out.println("Capacidade geral: ");
-        int capGeral = scanner.nextInt();
-
-        int capAtual = 0;
-
-        System.out.println("Quantidade de Assentos especiais: ");
-        int capEspecial = scanner.nextInt();
-        String vazio = scanner.nextLine();
-
         
+        int capGeral = 0;
+        while (capGeral == 0) {
+            System.out.println("Capacidade geral: ");
+            try {
+                capGeral = scanner.nextInt();
+                scanner.nextLine();
+                if(capGeral == 0){
+                    System.out.println("Quantidade de Assentos deve ser maior ou igual a 1 ");
+                }
+            } catch (Exception e) {
+                System.out.println("Por favor, insira um número válido.");
+                scanner.nextLine();
+            }
+        }
+
+        int capAtual = capGeral;
+        int capEspecial = 0;
+
+        while (capEspecial < capGeral) {
+            System.out.println("Quantidade de Assentos especiais: ");
+            try {
+                capEspecial = scanner.nextInt();
+                scanner.nextLine();
+                if ( capEspecial > capGeral) {
+                    System.out.println("O número cadeiras especiais deve ser menor ou igual a caapcidade geral.");
+                }
+            } catch (Exception e) {
+                System.out.println("Por favor, insira um número válido.");
+                scanner.nextLine();
+            }
+        }
+
         List<String> assentos = new ArrayList<>();
         for (int i = 1; i <= capGeral; i++) {
             System.out.println("Assento " + (i) + ": ");

@@ -11,14 +11,12 @@ public class FilmeController implements InterfaceController<FilmeModel> {
         this.filmes = new ArrayList<>();
     }
 
-    // Implementação do método de cadastrar
     @Override
     public void cadastrar(FilmeModel filme) {
         filmes.add(filme);
         System.out.println("Filme cadastrado com sucesso!");
     }
 
-    // Implementação do método de buscar
     @Override
     public FilmeModel buscar(int codFilme) {
         for (FilmeModel filme : filmes) {
@@ -38,11 +36,8 @@ public class FilmeController implements InterfaceController<FilmeModel> {
         }
         System.out.println("Filme não encontrado!");
         return null;
-
-        
     }
 
-    // Implementação do método de editar
     @Override
     public void editar(int codFilme, FilmeModel novoFilme) {
         for (int i = 0; i < filmes.size(); i++) {
@@ -55,7 +50,6 @@ public class FilmeController implements InterfaceController<FilmeModel> {
         System.out.println("Filme não encontrado!");
     }
 
-    // Implementação do método de remover
     @Override
     public void remover(int codFilme) {
         for (int i = 0; i < filmes.size(); i++) {
@@ -68,7 +62,6 @@ public class FilmeController implements InterfaceController<FilmeModel> {
         System.out.println("Filme não encontrado!");
     }
 
-    // Implementação do método de listar todos
     @Override
     public List<FilmeModel> listarTodos() {
         return filmes;

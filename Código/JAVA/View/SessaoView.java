@@ -10,16 +10,13 @@ import java.util.Scanner;
 public class SessaoView{
 
     private final Scanner scanner;
+    int cod = 1;
     
-
     public SessaoView() {
         this.scanner = new Scanner(System.in);
        
     }
 
-    int cod = 1;
-
-    
     public SessaoModel obterDadosSessao(SalaController controller) {
         System.out.println("=== Cadastrar Sessao ===");
 
@@ -52,10 +49,7 @@ public class SessaoView{
             
         List <String> assentos = (controller.ofereceAssentos(codSala));
         
-
         return new SessaoModel(codSessao, codFilme, codSala, data, horario, assentos);
-
-
     }
 
     public void exibirSessao(SessaoModel sessao, FilmeController controller) {

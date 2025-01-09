@@ -11,7 +11,6 @@ public class SessaoModel{
     Time horario;
     List <String> assentosDisponiveis;
 
-    
     public SessaoModel(int codSessao, int codFilme, int codSala, String data, Time horario,
             List<String> assentosDisponiveis) {
         this.codSessao = codSessao;
@@ -58,11 +57,4 @@ public class SessaoModel{
     public void setAssentosDisponiveis(List<String> assentosDisponiveis) {
         this.assentosDisponiveis = assentosDisponiveis;
     }
-
-    
-
-    
-
-    
-
 }

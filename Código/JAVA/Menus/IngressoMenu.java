@@ -5,7 +5,6 @@ import Models.IngressoModel;
 import View.IngressoView;
 import java.util.Scanner;
 
-
 public class IngressoMenu {
     static IngressoController controller = new IngressoController();
     static IngressoView view = new IngressoView();
@@ -42,12 +41,9 @@ public class IngressoMenu {
                         controller.cancelarCompra(ingressoBuscado);
                     }
                     case 3 -> {return;}
-    
                     default -> {System.out.println("Opção inválida!");}
                 }
-                
             }
-        } catch (Exception e) {
-        }    
+        }catch (Exception e){}    
     }
 }

@@ -5,7 +5,6 @@ import View.FilmeView;
 import java.util.Scanner;
 
 public class FilmeMenu {
-    
     static FilmeController controller = new FilmeController();
     static FilmeView view = new FilmeView();
         
@@ -13,7 +12,6 @@ public class FilmeMenu {
             return controller;
         }
         
-    
         public static void main(Scanner scanner) {
             
             try  {
@@ -26,7 +24,6 @@ public class FilmeMenu {
                     System.out.println("5. Listar Filmes");
                     System.out.println("6. Voltar para Menu Principal");
                     
-    
                     int opcao;
                     while (true) {
                         System.out.println("Escolha uma opção: ");
@@ -35,14 +32,13 @@ public class FilmeMenu {
                             break;
                         } else {
                             System.out.println("Erro: A entrada não é um número inteiro válido! Tente novamente");
-                            scanner.next(); // Consome a entrada inválida para evitar um loop infinito
+                            scanner.next();
                         }
                     }
                 
-    
                     switch (opcao) {
                         case 1 -> {
-                            FilmeModel novoFilme = view.obterDadosFilmeModel();
+                            FilmeModel novoFilme = view.obterDados();
                         controller.cadastrar(novoFilme);
                     }
                     case 2 -> {
@@ -50,14 +46,14 @@ public class FilmeMenu {
                         int codBuscar = scanner.nextInt();
                         
                         FilmeModel filmeBuscado = controller.buscar(codBuscar);
-                        view.exibirFilme(filmeBuscado);
+                        view.exibir(filmeBuscado);
                     }
                     case 3 -> {
                         System.out.print("Digite o código do filme a ser editado: ");
                         int codEditar = scanner.nextInt();
                         
                         System.out.println("Digite os novos dados do filme:");
-                        FilmeModel filmeEditado = view.obterDadosFilmeModel();
+                        FilmeModel filmeEditado = view.obterDados();
                         controller.editar(codEditar, filmeEditado);
                     }
                     case 4 -> {
@@ -67,12 +63,9 @@ public class FilmeMenu {
                         controller.remover(codDeletar);
                     }
                     case 5 -> controller.exibirNomesEIds();
-                    case 6 -> {
-                        return;}
-        
+                    case 6 -> {return;}
                     default -> {System.out.println("Opção inválida!");}
                 }
-                
             }
         } catch (Exception e){}
     }

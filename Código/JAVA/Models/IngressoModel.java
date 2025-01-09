@@ -76,8 +76,4 @@ public class IngressoModel{
     public void setAsssentoCliente(String asssentoCliente) {
         this.asssentoCliente = asssentoCliente;
     }
-
-    
-    
-    
 }
