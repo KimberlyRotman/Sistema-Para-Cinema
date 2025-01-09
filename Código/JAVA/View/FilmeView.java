@@ -1,8 +1,6 @@
 package View;
 import Models.FilmeModel;
 import java.sql.Time;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class FilmeView implements InterfaceView<FilmeModel>{
@@ -49,27 +47,7 @@ public class FilmeView implements InterfaceView<FilmeModel>{
         System.out.print("Data de Lançamento (ddmmaaaa): ");
         String dataLancamento = scanner.nextLine();
 
-        int numAtores = -1;
-        while (numAtores < 0) {
-            System.out.print("Quantos atores o filme possui? ");
-            try {
-                numAtores = scanner.nextInt();
-                scanner.nextLine();
-                if (numAtores < 0) {
-                    System.out.println("O número de atores não pode ser negativo.");
-                }
-            } catch (Exception e) {
-                System.out.println("Por favor, insira um número válido.");
-                scanner.nextLine();
-            }
-        }
-        List<String> atores = new ArrayList<>();
-        for (int i = 0; i < numAtores; i++) {
-            System.out.print("Ator " + (i + 1) + ": ");
-            atores.add(scanner.nextLine());
-        }
-
-        return new FilmeModel(atores, codFilme, dataLancamento, diretor, duracao, formato, genero, nome, sinopse);
+        return new FilmeModel(codFilme, dataLancamento, diretor, duracao, formato, genero, nome, sinopse);
     }
 
     @Override
@@ -86,7 +64,6 @@ public class FilmeView implements InterfaceView<FilmeModel>{
             System.out.println("Formato: " + filme.getFormato());
             System.out.println("Duração: " + filme.getDuracao());
             System.out.println("Data de Lançamento: " + filme.getDataLancamento());
-            System.out.println("Atores: " + String.join(", ", filme.getAtores()));
         }
     }
 }
