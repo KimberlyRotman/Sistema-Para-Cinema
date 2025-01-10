@@ -1,9 +1,8 @@
 package Controllers;
 import Models.FilmeModel;
-
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.*;
 
 public class FilmeController implements InterfaceController<FilmeModel> {
     
@@ -72,18 +71,8 @@ public class FilmeController implements InterfaceController<FilmeModel> {
         }
 
         for (FilmeModel filme : filmes) {
-            System.out.println("Codigo: " + filme.getCodFilme() + "Nome: " + filme.getNome() + "Genero: " + filme.getGenero() + "Data Lancamento: " 
-            + filme.getDataLancamento() + " Sinopse: " + filme.getSinopse() + "Duracao: " + filme.getDuracao() + "Formato: " + filme.getFormato() + "Dirator: " + filme.getDiretor());
-        }
-        System.out.println("Filme não encontrado!");
-        return null;
-    }
-
-    public String buscarNome(int codFilme){
-        for (FilmeModel filme : filmes) {
-            if (filme.getCodFilme() == codFilme) {
-                return filme.getNome();
-            }
+            System.out.println("Codigo: " + filme.getCodFilme() + " " + "Nome: " + filme.getNome() + " " + "Genero: " + filme.getGenero() + " " + "Data Lancamento: " 
+            + filme.getDataLancamento() + " " + " Sinopse: " + filme.getSinopse() + " " + "Duracao: " + filme.getDuracao() + " " + "Formato: " + filme.getFormato() + " " + "Diretor: " + filme.getDiretor());
         }
         System.out.println("Filme não encontrado!");
         return null;
@@ -91,26 +80,51 @@ public class FilmeController implements InterfaceController<FilmeModel> {
 
     @Override
     public void editar(int codFilme, FilmeModel novoFilme) {
-        for (int i = 0; i < filmes.size(); i++) {
-            if (filmes.get(i).getCodFilme() == codFilme) {
-                filmes.set(i, novoFilme);
-                System.out.println("Filme editado com sucesso!");
-                return;
-            }
-        }
-        System.out.println("Filme não encontrado!");
+    String sql = "UPDATE FILMES SET NOME = ?, GENERO = ?, DATALANCAMENTO = ?, SINOPSE = ?, DURACAO = ?, FORMATO = ?, DIRETOR = ? WHERE CODIGO = ?";
+    Connection conn = null;
+    PreparedStatement ps;
+
+    try {
+        ps = Conexao.getConexao(conn).prepareStatement(sql);
+
+        ps.setString(1, novoFilme.getNome());         
+        ps.setString(2, novoFilme.getGenero());       
+        ps.setString(3, novoFilme.getDataLancamento()); 
+        ps.setString(4, novoFilme.getSinopse());     
+        ps.setTime(5, novoFilme.getDuracao());        
+        ps.setString(6, novoFilme.getFormato());     
+        ps.setString(7, novoFilme.getDiretor());      
+        ps.setInt(8, codFilme);                       
+
+        ps.executeUpdate();
+        System.out.println("Filme atualizado com sucesso");
+    } catch (SQLException e) {
+        System.err.println("Não foi possível atualizar o filme: " + e.getMessage());
     }
+}
+
 
     @Override
     public void remover(int codFilme) {
-        for (int i = 0; i < filmes.size(); i++) {
-            if (filmes.get(i).getCodFilme() == codFilme) {
-                filmes.remove(i);
-                System.out.println("Filme removido com sucesso!");
-                return;
-            }
+        String sql = "DELETE FROM FILMES WHERE CODIGO = ?";
+        Connection conn = null;
+        PreparedStatement ps;
+
+        try {
+
+            ps = Conexao.getConexao(conn).prepareStatement(sql);
+
+            ps.setInt(1, codFilme);
+            ps.execute();
+            ps.close();
+
+            System.out.println("Filme deletado com sucesso");
+            System.out.println("");
+
+        } catch (SQLException e) {
+            System.out.println("Nao foi possivel deletar o filme" + e.getMessage());
+            System.out.println("");
         }
-        System.out.println("Filme não encontrado!");
     }
 
     @Override
@@ -129,3 +143,4 @@ public class FilmeController implements InterfaceController<FilmeModel> {
         }
     }
 }
+
