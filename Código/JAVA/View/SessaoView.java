@@ -60,7 +60,7 @@ public class SessaoView{
             System.out.println("=== Detalhes da Sala ===");
             System.out.println("Data: " + sessao.getData());
             System.out.println("Horario: " + sessao.getHorario());
-            System.out.println("Filme exibido: " + controller.buscarNome(sessao.getCodFilme()));
+            System.out.println("Filme exibido: " + controller.buscar(sessao.getCodFilme()));
         }
         
     }
