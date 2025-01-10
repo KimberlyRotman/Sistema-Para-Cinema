@@ -21,8 +21,7 @@ public class FilmeMenu {
                     System.out.println("2. Buscar Filme");
                     System.out.println("3. Editar Filme");
                     System.out.println("4. Deletar Filme");
-                    System.out.println("5. Listar Filmes");
-                    System.out.println("6. Voltar para Menu Principal");
+                    System.out.println("5. Voltar para Menu Principal");
                     
                     int opcao;
                     while (true) {
@@ -62,8 +61,7 @@ public class FilmeMenu {
                         
                         controller.remover(codDeletar);
                     }
-                    case 5 -> controller.exibirNomesEIds();
-                    case 6 -> {return;}
+                    case 5 -> {return;}
                     default -> {System.out.println("Opção inválida!");}
                 }
             }
